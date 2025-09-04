@@ -1,18 +1,16 @@
 name: "Super-Linter"
-author: "rahul srivastava"
-description: "demo yml file."
 on: push
 jobs:
-  super=lint:
+  super-lint:
     name: Lint code base
     runs-on: ubuntu-latest
     steps:
       -name: Checkout code
       uses: actions/checkout@v2
       
-    -name: Run Super-Linter
-    uses: github/super-linter@v3
-    env:
+      -name: Run Super-Linter
+      uses: github/super-linter@v4
+      env:
          DEFAULT_BRANCH:  main
          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 # You can view https://github.com/super-linter/super-linter#environment-variables
